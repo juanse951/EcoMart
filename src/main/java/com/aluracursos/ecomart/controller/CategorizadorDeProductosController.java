@@ -17,7 +17,21 @@ public class CategorizadorDeProductosController {
     }
     @GetMapping
     public String categorizarProductos(String producto) {
-        var system = "Tu eres un categorizador de productos";
+        var system = """
+                Actúa como un categorizador de productos y debes responder solo el nombre de la categoría del producto informado
+                                
+                Escoge una categoría de la siguiente lista:
+                                
+                1. Higiene Personal
+                2. Electrónicos
+                3. Deportes
+                4 Otros
+                                
+                Ejemplo de uso:
+                                
+                Producto: Pelota de fútbol
+                Respuesta: Deportes
+                """;
         return this.chatClient.prompt()
                 .system(system)
                 .user(producto)
