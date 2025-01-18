@@ -14,7 +14,7 @@ public class GeneradorDeProductosController {
     public GeneradorDeProductosController(ChatClient.Builder chatClientBuilder) {
         this.chatClient = chatClientBuilder.build();
     }
-    @GetMapping("/ai")
+    @GetMapping
     public String generadorDeProductos() {
         var pregunta = "Genera 5 productos ecologicos";
         return this.chatClient.prompt()
